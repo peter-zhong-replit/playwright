@@ -65,6 +65,8 @@ export class BrowserContext extends ChannelOwner<channels.BrowserContextChannel>
   _timeoutSettings: TimeoutSettings;
   _ownerPage: Page | undefined;
   _forReuse = false;
+  _unhandledDialogCallback: ((dialog: Dialog) => void) | undefined;
+
   private _closedPromise: Promise<void>;
   readonly _options: channels.BrowserNewContextParams;
 
